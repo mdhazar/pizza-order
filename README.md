@@ -50,28 +50,26 @@ I--true-->C[Enable Submit]-->Z
 
 ## Talimatlar
 
-Bu sprint challenge'ında, bilgisayar başında karnı acıkan yazılımcılara yiyecek getirmek için tasarlanmış bir web sitesi **Teknolojik Yemekler**' markasına, _Anasayfa_, _Sipariş Formu_ ve _Sipariş Alındı_ sayfası oluşturarak bu konulardaki ustalığınızı göstereceksin.  
-Proje iki zorluk aşamalı,
+Bu sprint challenge'ında, bilgisayar başında karnı acıkan yazılımcılara yiyecek getirmek için tasarlanmış bir web sitesi **Teknolojik Yemekler**' markasına, _Anasayfa_, _Sipariş Formu_ ve _Sipariş Alındı_ sayfası oluşturarak bu konulardaki ustalığınızı göstereceksin.Proje iki zorluk aşamalı,
 
-1.  **İterasyon 1**: ilk önce asgari yeterli ürün (IT1-Minimum Viable Product) aşamasına getirmeyi hedeflemelisin.
-2.  **Iterasyon 2**: İleri düzey görevlere eadece ama sadece, tasarımdaki IT1 kilometre taşına geldikten sonra başlamalısın. Buradaki gelişmiş görsel ve teknik problemleri çözmeyi IT1 sonrasında, aşağıda belirtilen sırada çözerek ilerlemelisin.
-3.  Projenin iki aşamasının da gerekli görselleri proje klasöründe var. Ayrıca [**Figma Formatında**](https://www.figma.com/file/q0xPW5uCel3rdzFgpjR9lt/S7-Challange-Revize) formatındaki tasarıma bu adresten erişebilirsiniz.
+1. **İterasyon 1**: ilk önce asgari yeterli ürün (IT1-Minimum Viable Product) aşamasına getirmeyi hedeflemelisin.
+2. **Iterasyon 2**: İleri düzey görevlere eadece ama sadece, tasarımdaki IT1 kilometre taşına geldikten sonra başlamalısın. Buradaki gelişmiş görsel ve teknik problemleri çözmeyi IT1 sonrasında, aşağıda belirtilen sırada çözerek ilerlemelisin.
+3. Projenin iki aşamasının da gerekli görselleri proje klasöründe var. Ayrıca [**Figma Formatında**](https://www.figma.com/file/q0xPW5uCel3rdzFgpjR9lt/S7-Challange-Revize) formatındaki tasarıma bu adresten erişebilirsiniz.
 
 ## Aşama 1: Proje Kurulumu ve İterasyon 1
 
 ### Görev 1: Proje Kurulumu
 
-- [ ] 1. **Create Repo From Template & Clone:**
-
-   - Sağ üstteki yeşil "Use this template" butonu ile, bir kopya oluşturun. işlemi tamamlandıktan sonra, kendi GitHub hesabınızda yer alan depo bağlantısını kopyalayın.
-   - VS Code'u açın ve terminali başlatın. Aşağıdaki komutu kullanarak depoyu bilgisayarınıza klonlayın:
-     ```sh
-     git clone <Yeni-Repo-URL'niz>
-     ```
-   - Örnek:
-     ```sh
-     git clone https://github.com/sizin-hesabiniz/fsweb-s7-challenge-pizza
-     ```
+- [X] 
+  - Sağ üstteki yeşil "Use this template" butonu ile, bir kopya oluşturun. işlemi tamamlandıktan sonra, kendi GitHub hesabınızda yer alan depo bağlantısını kopyalayın.
+  - VS Code'u açın ve terminali başlatın. Aşağıdaki komutu kullanarak depoyu bilgisayarınıza klonlayın:
+    ```sh
+    git clone <Yeni-Repo-URL'niz>
+    ```
+  - Örnek:
+    ```sh
+    git clone https://github.com/sizin-hesabiniz/fsweb-s7-challenge-pizza
+    ```
 
 2. **VS Code'da Geliştirmeye Başlamak:**
    - VS Code'u açın ve `File -> Open Folder` seçeneğiyle projeyi açın.
@@ -82,9 +80,10 @@ Proje iki zorluk aşamalı,
   npm run dev
   ```
 
-- [ ] Yeni reponuzu bilgisayarınıza klonlayın
+- [X] Yeni reponuzu bilgisayarınıza klonlayın
 
 3. **Geliştirmeye Başlayın** 🤓 👩‍💻 🧑‍💻
+
 - [ ] Main branch üzerinde çalışın
 - [ ] Comitinizi pushlayın: `git push origin main`
 - [ ] Farklı paketler kullanmaya çalışın.
@@ -98,9 +97,9 @@ Proje iki zorluk aşamalı,
 
 Zamanı verimli kullanmak için aşağıdaki sırayla geliştirme yapmanı tavsiye ediyoruz. Mobil ekranlar için Figma dosyasına da bakabilirsin.
 
-1.  [Sipariş Formu](./Interfaces/Iteration-1/OrderPizza.png)
-2.  [Anasayfa](./Interfaces/Iteration-1/Home.png)
-3.  [Sipariş Onayı](./Interfaces/Iteration-1/Success.png)
+1. [Sipariş Formu](./Interfaces/Iteration-1/OrderPizza.png)
+2. [Anasayfa](./Interfaces/Iteration-1/Home.png)
+3. [Sipariş Onayı](./Interfaces/Iteration-1/Success.png)
 
 #### Renk Kodları
 
@@ -176,9 +175,9 @@ Tarayıcı açıldıktan sonra da, VSCode'da yeni oluşturduğun cypress klasör
 
 Zamanı verimli kullanmak için aşağıdaki sırayla geliştirme yapmanı tavsiye ediyoruz.
 
-1.  [Sipariş Onayı](./Interfaces/Iteration-2/Success.png)
-2.  [Anasayfa](./Interfaces/Iteration-2/Home.png)
-3.  [Sipariş Formu](./Interfaces/Iteration-2/OrderPizza.png)
+1. [Sipariş Onayı](./Interfaces/Iteration-2/Success.png)
+2. [Anasayfa](./Interfaces/Iteration-2/Home.png)
+3. [Sipariş Formu](./Interfaces/Iteration-2/OrderPizza.png)
 
 ### Görev 3: IT2 Proje Gereklilikleri
 
@@ -190,7 +189,7 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
   - [ ] Sipariş POST edilirken bir ağ hatası olasılığı için kullanıcıya geribildirim verebilmelisin (örnek: İnternet'e bağlanılamadı)
 - [ ] Tasarım Güncellemesi: **Anasayfa** çok daha çeşitli tasarım öğeleriyle zenginleştir.
 - [ ] Tasarım Güncellemesi: **Sipariş** Form elemanlarını (inputlar), özel renk ve tasarım diline göre güncelle
-- [ ] Cypressle daha çok test yaz. 
+- [ ] Cypressle daha çok test yaz.
 
 İpucu: Özelleştirilmiş Checkbox ve Radio için [W3 örneğine](https://www.w3schools.com/howto/howto_css_custom_checkbox.asp) bakabilirsiniz.
 İpucu: Sayfalar arası veri taşırken, (sipariş formundan, sonuş sayfasına), router veya başka bir global state management aracı kullanmadan, sadece [Prop-Lifting](https://react.dev/learn/sharing-state-between-components) tekniğiyle, projenizi geliştirmenizi bekliyoruz.
@@ -205,15 +204,14 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
   - Sayfa yapısında anlamsal hiyerarşi ve erişilebilirlik gözetmez.
   - Hizalamalar ve CSS özellikleri konusunda dikkatsizlikler gösterir; tasarımın genel görünümü istenilen düzeyde değildir.
   - Kodun okunabilirliği ve yeniden kullanılabilirliği düşüktür.
-
 - **2 Gereklilikleri Karşılıyor:**
 
   - HTML5 semantik taglerini (örn. `header`, `footer`, `nav`, `section`) uygun yerlerde kullanır.
   - Sayfanın genel yapısını anlamlı bir şekilde oluşturur ve erişilebilirliği dikkate alır.
   - CSS ile düzgün hizalamalar yapar ve tasarımın genel görünümüne uygun özellikler seçer.
   - Kodun okunabilirliği ve yeniden kullanılabilirliği iyi düzeydedir.
-
 - **3 Gereksinimleri Aşıyor:**
+
   - Semantik HTML kullanımında mükemmel bir seviyededir ve sayfanın yapısını, SEO ve erişilebilirliği maksimize edecek şekilde düzenler. (WCAG 2.1) Tab tuşuna basarak tüm sayfada gezilebilir durumdadır. Ek olarak interaktif elemanlarda, fonksiyonuna uygun "aria-label" bulunmaktadır.
   - CSS Flexbox hatta Grid gibi modern CSS yöntemlerini etkili bir şekilde kullanarak, tasarımdaki hizalamaları ve düzeni hassas bir şekilde uygular.
   - CSS özelliklerini (örn. geçişler, animasyonlar) kullanarak kullanıcı deneyimini zenginleştirir ve tasarımın estetik değerini artırır.
@@ -225,13 +223,12 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
 
   - Aday IT2 tasarıma geçememiş veya yine yalnızca temel HTML tag'lerini kullanmış ve semantik tag'lardan yeterince faydalanmamış. İleri düzey özellikler veya daha karmaşık yapısal elementler göz ardı edilmiş.
   - CSS kullanımı basit ve yüzeyel. Tasarım detaylarına ve hizalamalara dikkat edilmemiş. İleri CSS özellikleri veya responsive tasarım teknikleri etkili bir şekilde kullanılmamış.
-
 - **2 Gereksinimleri Karşılıyor:**
 
   - CSS kullanımı, tasarımın estetik ve fonksiyonel gerekliliklerini karşılar düzeyde. Tasarım detaylarına dikkat edilmiş, hizalama ve responsive tasarım temel düzeyde uygulanmış.
   - Aday, anlamlı bir HTML yapısı kullanarak içeriği doğru semantik tag'lar ile yapılandırmış. İçerik net bir şekilde bölümlere ayrılmış ve sayfa mantıklı bir akışa sahip.
-
 - **3 Gereksinimleri Aşıyor:**
+
   - Aday, semantik anlamda zengin ve erişilebilir bir HTML yapısı oluşturmuş. Ek HTML5 özellikleri, ARIA rolleri kullanılarak sayfa hem insanlar hem de arama motorları için optimize edilmiş.
   - Aday, ileri düzey CSS teknikleri ve selectorler kullanarak detaylı ve karmaşık tasarım özelliklerini başarıyla kodlamış. CSS Grid veya Flexbox gibi modern layout sistemleri, form eleman özelliştirmeleri, animasyonlar, ve pseudo-elementler gibi gelişmiş özellikler etkili bir şekilde kullanılmış. Sayfa mükemmel bir şekilde responsive ve interaktif özelliklere sahip.
 
@@ -242,15 +239,14 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
   - Sayfa yapısında ve kodun genel düzeninde anlamsal bütünlük ve erişilebilirlik unsurları yetersizdir.
   - CSS ile yapılan hizalamalar ve tasarım uygulamaları yüzeyseldir, detaylara ve tasarımın inceliklerine yeterince önem verilmez.
   - Kod tekrarı yaygındır, modülerlik ve yeniden kullanılabilirlik düşük düzeydedir.
-
 - **2 Gereklilikleri Karşılıyor:**
 
   - Semantik HTML tagleri (örn. `article`, `aside`, `main`) etkin bir şekilde kullanılarak içerik anlamlandırılır ve yapılandırılır.
   - Erişilebilirlik standartlarına uygun bir şekilde sayfa yapısı kurulur ve klavye erişilebilirliği gibi unsurlar gözetilir.
   - CSS ile detaylı hizalamalar ve tasarım özellikleri dikkatli bir şekilde uygulanır; responsive tasarım prensipleri benimsenir.
   - Kodun okunabilirliği ve modüler yapısı iyi bir seviyededir.
-
 - **3 Gereksinimleri Aşıyor:**
+
   - HTML ve CSS kullanımında derin bir anlayış sergilenir; semantik yapı mükemmel bir şekilde kurulur ve her elementin kullanım amacı açıkça belirlenir.
   - Modern CSS teknikleri (örn. CSS Grid, Flexbox) ve ileri düzey özellikler (örn. custom properties, animations) ustalıkla kullanılarak zengin ve dinamik kullanıcı arayüzleri oluşturulur.
   - Sayfa, tüm cihaz ve ekran boyutlarında mükemmel bir şekilde çalışacak şekilde tasarlanmıştır; yüksek performans ve erişilebilirlik için ileri düzey optimizasyonlar yapılır.
@@ -263,14 +259,13 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
   - Form elemanlarını ve etiketlerini temel düzeyde eşleştirir, ancak yaygın hatalar yapar (örn. `label` ile ilgili `input` elemanlarını doğru şekilde ilişkilendiremez).
   - Checkbox ve radiobutton kullanımında semantik hatalar yapar, kullanıcı arayüzünde kafa karışıklığına yol açabilir.
   - Controlled form elemanlarının event flow’u (örn. `onChange`, `onSubmit` gibi event handler’lar) yanlış veya eksik uygulanmıştır.
-
 - **2 Gereklilikleri Karşılıyor:**
 
   - Form elemanları ile ilgili etiketleri doğru şekilde eşleştirir ve form elemanlarının kullanım amacını anlar.
   - Checkbox ve radiobutton gibi form elemanlarını doğru bir şekilde kullanır ve semantiklerini anlar; kullanıcıya net bir deneyim sunar.
   - Controlled form elemanlarını yönetir ve temel event handler’ları (örn. `onChange`, `onSubmit`) etkin bir şekilde kullanır. Formun doğru bir şekilde gönderilmesini ve kullanıcı girdisinin yönetilmesini sağlar.
-
 - **3 Gereksinimleri Aşıyor:**
+
   - Form elemanları ve etiketleri arasında mükemmel bir eşleştirme yapar; `label` for ve `input` id ilişkilendirmesini ustalıkla kullanır.
   - Gelişmiş form semantiklerini anlar ve uygular, özellikle checkbox ve radiobutton gruplarını anlamlandırma ve kullanıcı deneyimini iyileştirme konusunda üstün bir yaklaşım sergiler. Farklı tiplerdeki alanları ortak event handlerlar ile yönetebilir.
   - Controlled form elemanları ile ilgili event flow’u ileri düzeyde yönetir; form verisini etkin bir şekilde toplar ve işler. `useState` ve `useEffect` gibi React hook’larını kullanarak form durumunu dinamik ve etkili bir şekilde yönetir.
@@ -282,14 +277,13 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
   - Kodu mantıksal componentlere ayırma konusunda yetersiz kalır; kod tekrarı yaygındır ve component yapısını etkili bir şekilde kullanamaz.
   - `map` metodu kullanımında temel anlayışa sahiptir ancak bu yöntemi componentlerle etkili bir şekilde birleştiremez. Örneğin, listeleri render etmede hatalar yapar veya `key` prop'unun önemini göz ardı eder.
   - Componentler arası veri akışını ve prop kullanımını anlamada ve uygulamada eksiklikler gösterir.
-
 - **2 Gereklilikleri Karşılıyor:**
 
   - Kodu anlamlı ve tekrarı minimize edecek şekilde componentlere ayırır. Temel component yapısını ve yeniden kullanılabilirliğini anlar ve uygular.
   - `map` metodu ile listeleri veya veri koleksiyonlarını etkili bir şekilde render edebilir; her eleman için benzersiz bir `key` prop sağlayarak performansı ve güncelleme davranışını optimize eder.
   - Componentler arasında veri akışını (props ve event handling) temel düzeyde yönetebilir ve component hiyerarşisinde veri iletimini sağlayabilir.
-
 - **3 Gereksinimleri Aşıyor:**
+
   - Kodu yüksek derecede modüler componentlere ayırır ve her birinin yeniden kullanılabilirliğini, test edilebilirliğini ve bakım kolaylığını maksimize eder.
   - `map` metodu ile karmaşık ya da basit bütün veri yapılarını ve listeleri ustalıkla render eder; dinamik içeriği yönetmede ve güncellemelerde yüksek performans ve kullanıcı deneyimi sağlar.
   - Componentler arası veri akışını ve durum yönetimini (state management) sorunsuz düzeyde yönetebilir.
@@ -302,15 +296,14 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
   - Formlarda veri doğrulaması yapmamıştır ya da çoğunu eksik veya hatalı yapar.
   - Veri yönetimi ve event handlerlar arasındaki ilişkiyi anlamada ve bunları etkili bir şekilde entegre etmede zorlanır.
   - Hata yönetimi ve kullanıcıya geribildirim sağlama konularında eksiklikler gösterir.
-
 - **2 Gereklilikleri Karşılıyor:**
 
   - Çeşitli event handlerları kullanarak veri akışını yönetebilir ve kullanıcı etkileşimlerine dinamik yanıtlar üretebilir.
   - JavaScript ile yeterli form doğrulama tekniklerini uygular.
   - State yönetimi ve componentler arası veri iletimi konusunda temel prensipleri uygular.
   - Kullanıcı hatalarını yakalar ve kullanıcı dostu geribildirimler sağlar, form gönderimi sırasında kullanıcı deneyimini iyileştirir.
-
 - **3 Gereksinimleri Aşıyor:**
+
   - Gelişmiş veri akışı yönetimi becerileri gösterir kod tekrarı yoktur.
   - Form verisi işleme, event handling ve state yönetimi konularında derin bir anlayış sergiler; temiz bir kode ve ve kullanıcı deneyimini optimize eder.
   - Hata yönetimi ve kullanıcıya geribildirim mekanizmalarında eksiksiz ilerler, uygulamanın sağlamlığını ve erişilebilirliğini artırır.
@@ -323,15 +316,14 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
   - Hatalı veya eksik URL, yanlış payload yapısı gibi temel hatalar yapar.
   - Hata yakalama (`catch` bloğu) ve başarılı yanıt işleme (`then` bloğu) konularında eksiklikler gösterir.
   - HTTP request ve response yapısını anlamada ve uygulamada zorluk çeker.
-
 - **2 Gereklilikleri Karşılıyor:**
 
   - Axios ile `reqres.in` adresine doğru endpoint'e POST request gönderimi yapabilir.
   - Sipariş verilerini (örneğin, pizza türü, adet) uygun payload yapısı ile gönderir.
   - Başarılı ve hatalı yanıtları işleyebilir; basit hata yönetimi ve kullanıcı geribildirimleri sağlar.
   - .then .catch veya promise tabanlı yaklaşımları kullanarak asenkron veri akışını yönetebilir.
-
 - **3 Gereksinimleri Aşıyor:**
+
   - Gelişmiş Axios konfigürasyonları kullanarak, .catch içinde hata yakalayıp kullanıcıya göstermek gibi daha düzey özellikleri etkin bir şekilde uygular.
   - Karmaşık hata yönetimi stratejileri geliştirir; farklı HTTP durum kodlarına göre detaylı hata mesajları ve kullanıcı geribildirimleri üretir.
 
@@ -344,15 +336,14 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
   - Parent-child bileşenler arası veri iletiminde ve callback fonksiyonlarının kullanımında hatalar yapar.
   - Event handler ve form validation işlemlerini doğru şekilde kurgulayamaz; kodda hatalı veya eksik uygulamalar bulunur.
   - React’te veri akışını (state ve props data flow), form işlemlerini ve routing’i etkili bir şekilde kullanmada yetersiz kalır.
-
 - **2 Gereklilikleri Karşılıyor:**
 
   - React JS’nin temel konseptlerine (state, props, component lifecycle, event handling) hakimdir ve bunları uygulayabilir.
   - State ve props kullanımında yetkinlik gösterir; parent-child bileşenleri arasında veri ve callback fonksiyonları etkili bir şekilde iletir.
   - Event handler’ları ve form validation süreçlerini doğru ve etkili bir şekilde kurgular.
   - Veri akışını (state ve props data flow), form veri yönetimi, routing ve prop passing konularında temel ve orta düzeyde uygulamalar gerçekleştirebilir.
-
 - **3 Gereksinimleri Aşıyor:**
+
   - React JS üzerinde derin bir anlayışa ve uygulama becerisine sahiptir; ileri düzey state yönetimi ve performans optimizasyonu tekniklerini uygular.
   - Bileşenler arası veri iletiminde ve callback fonksiyonlarında hatasız kullanır.
   - Kompleks event handling ve form validation işlemlerini mükemmel bir şekilde kurgular ve uygular.
@@ -366,15 +357,14 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
   - Yazılan testler, uygulamanın önemli akışlarını veya fonksiyonlarını kapsamaz veya çok sınırlı kapsamdadır.
   - Testlerde sıkça hatalar yapar (örneğin, seçicileri yanlış kullanmak, yanlış assertion'lar yapmak).
   - Formlarla ilgili test senaryoları eksik veya yanlış uygulanmıştır, form elemanları ve etkileşimleri doğru test edilmez.
-
 - **2 Gereklilikleri Karşılıyor:**
 
   - Uygulamanın temel işlevselliğini test eden en az üç anlamlı Cypress testi yazabilir.
   - Testler, uygulamanın önemli akışlarını kapsar ve form işlemleri dahil olmak üzere temel kullanıcı etkileşimlerini doğru bir şekilde test eder.
   - Test senaryoları, uygulamanın beklenen davranışlarını doğru bir şekilde yansıtır ve başarılı bir şekilde çalışır.
   - Rastgele seçilmiş testler, uygulamanın kritik bölümlerini kapsayacak şekilde stratejik olarak seçilmiştir.
-
 - **3 Gereksinimleri Aşıyor:**
+
   - Bütün uygulama akışını, ilk sayfadan başlayarak kapsamlı bir şekilde test eden, form işlemleri de dahil olmak üzere ileri düzey Cypress testleri yazabilir.
   - Yazılan testler, uygulamanın tüm önemli senaryolarını ve edge case'leri kapsar, yüksek kapsamlılık ve derinlik gösterir.
   - Testler, uygulamanın kullanıcı arayüzü ve işlevselliği üzerinde detaylı kontrol sağlar; form validasyonları, form veri akışı ve dinamik içeriklerin doğrulaması gibi ileri senaryoları içerir.
@@ -387,10 +377,11 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
 #### b) Bu yeni öğenin eklenmesi için adımlar nasıl olmalıdır?
 
 - **1 Gereksinimlerin Altında:**
+
   - Yanlış eleman seçimi ve/veya çok tereddütle, destek alarak düşünerek yanıt verebilmiştir.
 - **2 Gereklilikleri Karşılıyor:**
 
   - Doğru form elemanlarından birinin seçmiştir. Veri yönetiminde doğru akışı ve adımları eksiksiz ifade edebilmiştir.
-
 - **3 Gereksinimleri Aşıyor:**
+
   - Doğru yanıta ek, en az bir başka çözüm ile de daha geniş perspektiftan yanıtlayabilme, ikisi arasındaki benzerlik ve uygulama farklarını karşılaştırabilmek.
