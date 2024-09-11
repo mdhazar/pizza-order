@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 
 const Header = styled.header`
   box-sizing: border-box;
@@ -205,6 +206,10 @@ function SiparisFormu() {
 
   const incrementQuantity = () => setQuantity(prev => prev + 1);
   const decrementQuantity = () => setQuantity(prev => prev > 1 ? prev - 1 : 1);
+  const history = useHistory(); 
+  const handleSubmitOrder = () => {
+    history.push('/siparisonayi');
+  };
 
   return (
     <div>
@@ -300,7 +305,7 @@ function SiparisFormu() {
 
         <OrderSummary>
           <TotalPrice>Toplam: {totalPrice.toFixed(2)}₺</TotalPrice>
-          <OrderButton>SİPARİŞ VER</OrderButton>
+          <OrderButton onClick={handleSubmitOrder}>SİPARİŞ VER</OrderButton>
         </OrderSummary>
       </FormContainer>
     </div>
