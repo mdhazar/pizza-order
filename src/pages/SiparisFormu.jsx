@@ -143,21 +143,24 @@ const RadioInput = styled.input`
 const CounterContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  justify-content: center;
+  gap: 10px;
+  width: 500px;
 `;
 
 const CounterButton = styled.button`
   background-color: #FDB913;
   color: #000;
+  padding: 40px;
   border: none;
   border-radius: 4px;
-  font-size: 1.2em;
+  font-size: 2em;
   cursor: pointer;
   padding: 5px 10px;
 `;
 
 const CounterValue = styled.span`
-  font-size: 1.2em;
+  font-size: 2em;
   margin: 0 10px;
 `;
 
@@ -165,16 +168,25 @@ const OrderSummary = styled.div`
   background-color: #f5f5f5;
   padding: 20px;
   border-radius: 8px;
-  margin-top: 20px;
   width: 300px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 `;
 
 const TotalPrice = styled.p`
   font-size: 1.2em;
   font-weight: bold;
+  margin-top: 10px;
+
+`;
+const OrderSection = styled.div`
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  
+  width: 100%; 
 `;
 
 
@@ -225,11 +237,7 @@ function SiparisFormu() {
           <Rating>4.9 (200)</Rating>
         </PriceRatingContainer>
         <p>Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta denir.</p>
-        <CounterContainer>
-          <CounterButton onClick={decrementQuantity}>-</CounterButton>
-          <CounterValue>{quantity}</CounterValue>
-          <CounterButton onClick={incrementQuantity}>+</CounterButton>
-        </CounterContainer>
+        
         <SizeAndDoughContainer>
           <SizeSelection>
             <Label>Boyut Seç *</Label>
@@ -302,11 +310,18 @@ function SiparisFormu() {
             placeholder="Siparişine eklemek istediğin bir not var mı?" 
           />
         </FormField>
-
-        <OrderSummary>
-          <TotalPrice>Toplam: {totalPrice.toFixed(2)}₺</TotalPrice>
-          <OrderButton onClick={handleSubmitOrder}>SİPARİŞ VER</OrderButton>
-        </OrderSummary>
+            
+        <OrderSection>
+          <CounterContainer>
+            <CounterButton onClick={decrementQuantity}>-</CounterButton>
+            <CounterValue>{quantity}</CounterValue>
+            <CounterButton onClick={incrementQuantity}>+</CounterButton>
+          </CounterContainer>
+          <OrderSummary>
+            <TotalPrice>Toplam: {totalPrice.toFixed(2)}₺</TotalPrice>
+            <OrderButton onClick={handleSubmitOrder}>SİPARİŞ VER</OrderButton>
+          </OrderSummary>
+        </OrderSection>
       </FormContainer>
     </div>
   );
