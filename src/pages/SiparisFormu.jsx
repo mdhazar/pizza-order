@@ -28,12 +28,13 @@ const Paragraf = styled.p`
   position: absolute;
   font-size: 1em;
   color: white;
-  left: 225px;
+  left: 435px;
   top: 250px;
 `;
 
 const FormContainer = styled.div`
   max-width: 800px;
+  
   margin: 50px auto;
   background-color: #fff;
   padding: 30px;
@@ -46,12 +47,7 @@ const FormTitle = styled.h2`
   margin-bottom: 20px;
 `;
 
-const Price = styled.div`
-  font-size: 2em;
-  font-weight: bold;
-  color: #000;
-  margin-bottom: 10px;
-`;
+
 
 const FormField = styled.div`
   margin-bottom: 15px;
@@ -109,7 +105,49 @@ const OrderButton = styled.button`
   font-size: 1.2em;
   cursor: pointer;
 `;
+const PriceRatingContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+`;
+const Price = styled.div`
+  font-size: 2em;
+  font-weight: bold;
+  color: #000;
+`;
+const Rating = styled.span`
+  font-size: 1em;
+  color: #666;
+`;
 
+const SizeAndDoughContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+`;
+const SizeSelection = styled.div`
+  flex: 1;
+  margin-right: 20px;
+`;
+
+const DoughSelection = styled.div`
+  flex: 1;
+`;
+const RadioGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const RadioLabel = styled.label`
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+`;
+
+const RadioInput = styled.input`
+  margin-right: 5px;
+`;
 function SiparisFormu() {
   const [size, setSize] = useState('');
   const [dough, setDough] = useState('');
@@ -136,27 +174,59 @@ function SiparisFormu() {
 
       <FormContainer>
         <FormTitle>Position Absolute Acı Pizza</FormTitle>
-        <Price>85.50₺</Price>
-        <p>4.9 (200)</p>
+        <PriceRatingContainer>
+          <Price>85.50₺</Price>
+          <Rating>4.9 (200)</Rating>
+        </PriceRatingContainer>
         <p>Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. . Küçük bir pizzaya bazen pizzetta denir.</p>
 
         <FormField>
-          <Label>Boyut Seç *</Label>
-          <Select value={size} onChange={handleSizeChange}>
-            <option value="">Seçiniz</option>
-            <option value="küçük">Küçük</option>
-            <option value="orta">Orta</option>
-            <option value="büyük">Büyük</option>
-          </Select>
-        </FormField>
+          <SizeAndDoughContainer>
+            <SizeSelection>
+              <Label>Boyut Seç *</Label>
+              <div>
+                <label>
+                  <input
+                    type="radio"
+                    name="size"
+                    value="küçük"
+                    checked={size === "küçük"}
+                    onChange={handleSizeChange}
+                  />
+                  Küçük
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="size"
+                    value="orta"
+                    checked={size === "orta"}
+                    onChange={handleSizeChange}
+                  />
+                  Orta
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="size"
+                    value="büyük"
+                    checked={size === "büyük"}
+                    onChange={handleSizeChange}
+                  />
+                  Büyük
+                </label>
+              </div>
+            </SizeSelection>
 
-        <FormField>
-          <Label>Hamur Seç *</Label>
-          <Select value={dough} onChange={handleDoughChange}>
-            <option value="">Seçiniz</option>
-            <option value="ince">İnce</option>
-            <option value="kalın">Kalın</option>
-          </Select>
+          <DoughSelection>
+            <Label>Hamur Seç *</Label>
+            <Select value={dough} onChange={handleDoughChange}>
+              <option value="">Seçiniz</option>
+              <option value="ince">İnce</option>
+              <option value="kalın">Kalın</option>
+            </Select>
+          </DoughSelection>
+          </SizeAndDoughContainer>
         </FormField>
 
         <FormField>
