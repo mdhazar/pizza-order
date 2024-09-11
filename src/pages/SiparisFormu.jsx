@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Header = styled.header`
@@ -86,15 +86,6 @@ const NoteField = styled.textarea`
   border-radius: 4px;
 `;
 
-const OrderSummary = styled.div`
-  background-color: #f5f5f5;
-  padding: 20px;
-  border-radius: 8px;
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
 
 const OrderButton = styled.button`
   background-color: #FDB913;
@@ -148,11 +139,59 @@ const RadioLabel = styled.label`
 const RadioInput = styled.input`
   margin-right: 5px;
 `;
+const CounterContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+`;
+
+const CounterButton = styled.button`
+  background-color: #FDB913;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 5px 10px;
+`;
+
+const CounterValue = styled.span`
+  font-size: 1.2em;
+  margin: 0 10px;
+`;
+
+const OrderSummary = styled.div`
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const TotalPrice = styled.p`
+  font-size: 1.2em;
+  font-weight: bold;
+`;
+
+
 function SiparisFormu() {
   const [size, setSize] = useState('');
   const [dough, setDough] = useState('');
   const [toppings, setToppings] = useState([]);
   const [note, setNote] = useState('');
+  const [quantity, setQuantity] = useState(1);
+  const [totalPrice, setTotalPrice] = useState(85.50);
+
+  const basePrice = 85.50;
+  const toppingPrice = 5;
+
+  useEffect(() => {
+    const newTotal = (basePrice + toppings.length * toppingPrice) * quantity;
+    setTotalPrice(newTotal);
+  }, [quantity, toppings]);
 
   const handleSizeChange = (e) => setSize(e.target.value);
   const handleDoughChange = (e) => setDough(e.target.value);
@@ -164,6 +203,9 @@ function SiparisFormu() {
   };
   const handleNoteChange = (e) => setNote(e.target.value);
 
+  const incrementQuantity = () => setQuantity(prev => prev + 1);
+  const decrementQuantity = () => setQuantity(prev => prev > 1 ? prev - 1 : 1);
+
   return (
     <div>
       <Header>
@@ -171,52 +213,54 @@ function SiparisFormu() {
         <Paragraf>Anasayfa - Sipariş Oluştur</Paragraf>
       </Header>
       
-
       <FormContainer>
         <FormTitle>Position Absolute Acı Pizza</FormTitle>
         <PriceRatingContainer>
           <Price>85.50₺</Price>
           <Rating>4.9 (200)</Rating>
         </PriceRatingContainer>
-        <p>Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. . Küçük bir pizzaya bazen pizzetta denir.</p>
-
-        <FormField>
-          <SizeAndDoughContainer>
-            <SizeSelection>
-              <Label>Boyut Seç *</Label>
-              <div>
-                <label>
-                  <input
-                    type="radio"
-                    name="size"
-                    value="küçük"
-                    checked={size === "küçük"}
-                    onChange={handleSizeChange}
-                  />
-                  Küçük
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    name="size"
-                    value="orta"
-                    checked={size === "orta"}
-                    onChange={handleSizeChange}
-                  />
-                  Orta
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    name="size"
-                    value="büyük"
-                    checked={size === "büyük"}
-                    onChange={handleSizeChange}
-                  />
-                  Büyük
-                </label>
-              </div>
-            </SizeSelection>
+        <p>Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta denir.</p>
+        <CounterContainer>
+          <CounterButton onClick={decrementQuantity}>-</CounterButton>
+          <CounterValue>{quantity}</CounterValue>
+          <CounterButton onClick={incrementQuantity}>+</CounterButton>
+        </CounterContainer>
+        <SizeAndDoughContainer>
+          <SizeSelection>
+            <Label>Boyut Seç *</Label>
+            <RadioGroup>
+              <RadioLabel>
+                <RadioInput
+                  type="radio"
+                  name="size"
+                  value="küçük"
+                  checked={size === "küçük"}
+                  onChange={handleSizeChange}
+                />
+                Küçük
+              </RadioLabel>
+              <RadioLabel>
+                <RadioInput
+                  type="radio"
+                  name="size"
+                  value="orta"
+                  checked={size === "orta"}
+                  onChange={handleSizeChange}
+                />
+                Orta
+              </RadioLabel>
+              <RadioLabel>
+                <RadioInput
+                  type="radio"
+                  name="size"
+                  value="büyük"
+                  checked={size === "büyük"}
+                  onChange={handleSizeChange}
+                />
+                Büyük
+              </RadioLabel>
+            </RadioGroup>
+          </SizeSelection>
 
           <DoughSelection>
             <Label>Hamur Seç *</Label>
@@ -226,8 +270,7 @@ function SiparisFormu() {
               <option value="kalın">Kalın</option>
             </Select>
           </DoughSelection>
-          </SizeAndDoughContainer>
-        </FormField>
+        </SizeAndDoughContainer>
 
         <FormField>
           <Label>Ek Malzemeler (5₺ ek ücret)</Label>
@@ -256,10 +299,7 @@ function SiparisFormu() {
         </FormField>
 
         <OrderSummary>
-          <div>
-            <p><strong>Seçimler:</strong> 25.00₺</p>
-            <p><strong>Toplam:</strong> 110.50₺</p>
-          </div>
+          <TotalPrice>Toplam: {totalPrice.toFixed(2)}₺</TotalPrice>
           <OrderButton>SİPARİŞ VER</OrderButton>
         </OrderSummary>
       </FormContainer>
