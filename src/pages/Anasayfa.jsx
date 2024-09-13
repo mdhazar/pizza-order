@@ -9,7 +9,7 @@ const MainPage = styled.div`
   min-height: 100vh;
   font-size: 20px;
   background-color: #CE2829;
-  background-image: url("Assets/Iteration-1-assets/home-banner.png"); /* Add the image here */
+  background-image: url("Assets/Iteration-1-assets/home-banner.png"); 
   background-position: bottom; 
   background-repeat: no-repeat; 
   background-size: contain; 

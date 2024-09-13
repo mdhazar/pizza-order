@@ -190,38 +190,92 @@ const OrderSection = styled.div`
 `;
 
 
-function SiparisFormu() {
+const sizes = [
+  { value: "küçük", label: "Küçük" },
+  { value: "orta", label: "Orta" },
+  { value: "büyük", label: "Büyük" }
+];
+
+const doughTypes = [
+  { value: "ince", label: "İnce" },
+  { value: "kalın", label: "Kalın" }
+];
+
+const toppings = [
+  'Pepperoni', 'Sosis', 'Kanada Jambonu', 'Tavuk Izgara', 'Soğan', 
+  'Domates', 'Mısır', 'Sucuk', 'Jalepeno', 'Sarımsak', 'Biber', 'Ananas', 'Kabak'
+];
+
+function SiparisFormu({ onOrderSubmit }) {
   const [size, setSize] = useState('');
   const [dough, setDough] = useState('');
-  const [toppings, setToppings] = useState([]);
+  const [selectedToppings, setSelectedToppings] = useState([]);
   const [note, setNote] = useState('');
   const [quantity, setQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(85.50);
+  const [errors, setErrors] = useState({});
 
   const basePrice = 85.50;
   const toppingPrice = 5;
 
-  useEffect(() => {
-    const newTotal = (basePrice + toppings.length * toppingPrice) * quantity;
-    setTotalPrice(newTotal);
-  }, [quantity, toppings]);
+  const history = useHistory();
 
-  const handleSizeChange = (e) => setSize(e.target.value);
-  const handleDoughChange = (e) => setDough(e.target.value);
+  useEffect(() => {
+    const newTotal = (basePrice + selectedToppings.length * toppingPrice) * quantity;
+    setTotalPrice(newTotal);
+  }, [quantity, selectedToppings]);
+
+  const handleSizeChange = (e) => {
+    setSize(e.target.value);
+    setErrors(prev => ({ ...prev, size: '' })); 
+  };
+  
+  const handleDoughChange = (e) => {
+    setDough(e.target.value);
+    setErrors(prev => ({ ...prev, dough: '' }));
+  };
+  
+
   const handleToppingsChange = (e) => {
     const value = e.target.value;
-    setToppings(prev => 
+    setSelectedToppings(prev => 
       prev.includes(value) ? prev.filter(t => t !== value) : [...prev, value]
     );
   };
+
   const handleNoteChange = (e) => setNote(e.target.value);
 
   const incrementQuantity = () => setQuantity(prev => prev + 1);
   const decrementQuantity = () => setQuantity(prev => prev > 1 ? prev - 1 : 1);
-  const history = useHistory(); 
-  const handleSubmitOrder = () => {
-    history.push('/siparisonayi');
+  
+  const validateForm = () => {
+    let formErrors = {};
+    if (!size) formErrors.size = 'Lütfen bir boyut seçin';
+    if (!dough) formErrors.dough = 'Lütfen bir hamur tipi seçin';
+    setErrors(formErrors);
+    return Object.keys(formErrors).length === 0;
   };
+
+  const handleSubmitOrder = () => {
+    const isFormValid = validateForm();
+    if (isFormValid) {
+      const orderData = {
+        size,
+        dough,
+        toppings: selectedToppings,
+        note,
+        quantity,
+        totalPrice
+      };
+      
+      history.push({
+        pathname: '/siparisonayi',
+        state: { order: orderData }  
+      });
+    }
+  };
+  
+  
 
   return (
     <div>
@@ -242,58 +296,44 @@ function SiparisFormu() {
           <SizeSelection>
             <Label>Boyut Seç *</Label>
             <RadioGroup>
-              <RadioLabel>
-                <RadioInput
-                  type="radio"
-                  name="size"
-                  value="küçük"
-                  checked={size === "küçük"}
-                  onChange={handleSizeChange}
-                />
-                Küçük
-              </RadioLabel>
-              <RadioLabel>
-                <RadioInput
-                  type="radio"
-                  name="size"
-                  value="orta"
-                  checked={size === "orta"}
-                  onChange={handleSizeChange}
-                />
-                Orta
-              </RadioLabel>
-              <RadioLabel>
-                <RadioInput
-                  type="radio"
-                  name="size"
-                  value="büyük"
-                  checked={size === "büyük"}
-                  onChange={handleSizeChange}
-                />
-                Büyük
-              </RadioLabel>
+              {sizes.map(({ value, label }) => (
+                <RadioLabel key={value}>
+                  <RadioInput
+                    type="radio"
+                    name="size"
+                    value={value}
+                    checked={size === value}
+                    onChange={handleSizeChange}
+                  />
+                  {label}
+                </RadioLabel>
+              ))}
             </RadioGroup>
+            {errors.size && <ErrorMessage>{errors.size}</ErrorMessage>}
           </SizeSelection>
 
           <DoughSelection>
             <Label>Hamur Seç *</Label>
             <Select value={dough} onChange={handleDoughChange}>
               <option value="">Seçiniz</option>
-              <option value="ince">İnce</option>
-              <option value="kalın">Kalın</option>
+              {doughTypes.map(({ value, label }) => (
+                <option key={value} value={value}>{label}</option>
+              ))}
             </Select>
+            {errors.dough && <ErrorMessage>{errors.dough}</ErrorMessage>}
           </DoughSelection>
+
         </SizeAndDoughContainer>
 
         <FormField>
           <Label>Ek Malzemeler (5₺ ek ücret)</Label>
           <CheckboxContainer>
-            {['Pepperoni', 'Sosis', 'Kanada Jambonu', 'Tavuk Izgara', 'Soğan', 'Domates', 'Mısır', 'Sucuk', 'Jalepeno', 'Sarımsak', 'Biber', 'Ananas', 'Kabak'].map(topping => (
+            {toppings.map(topping => (
               <div key={topping}>
                 <input 
                   type="checkbox" 
                   value={topping} 
-                  checked={toppings.includes(topping)}
+                  checked={selectedToppings.includes(topping)}
                   onChange={handleToppingsChange} 
                 />
                 <label>{topping}</label>
@@ -326,5 +366,7 @@ function SiparisFormu() {
     </div>
   );
 }
+
+  
 
 export default SiparisFormu;
