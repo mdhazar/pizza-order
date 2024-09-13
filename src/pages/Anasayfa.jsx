@@ -6,7 +6,7 @@ const MainPage = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   font-size: 20px;
   background-color: #CE2829;
   background-image: url("Assets/Iteration-1-assets/home-banner.png"); /* Add the image here */
@@ -20,7 +20,7 @@ const Title = styled.h1`
   font-size: 2em;
   text-align: center;
   color: white;
-  margin: 100px;
+  margin: 100px 0;
 `;
 const Title2 = styled.h2`
   font-size: 3.5em;

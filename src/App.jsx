@@ -1,4 +1,3 @@
-
 import Anasayfa from './pages/Anasayfa';
 import SiparisFormu from './pages/SiparisFormu';
 import SiparisOnayi from './pages/SiparisOnayi';
@@ -9,20 +8,12 @@ function App() {
   return (
     <>
       <Switch>
-        <Route path="/anasayfa">
-          <Anasayfa/>
-        </Route>
-        <Route path="/siparisformu">
-          <SiparisFormu/>
-        </Route>
-        <Route path="/siparisonayi">
-          <SiparisOnayi/>
-        </Route>
-
+        <Route exact path="/" component={Anasayfa} />
+        <Route path="/siparisformu" component={SiparisFormu} />
+        <Route path="/siparisonayi" component={SiparisOnayi} />
       </Switch>
-
     </>
-  )
+  );
 }
 
-export default App
+export default App;
